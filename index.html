@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luxe Haven Hotel Booking</title>
+<title>Luxe Haven | Pondicherry</title>
 
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,17 +12,10 @@
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<!-- Google Fonts -->
+<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
 :root {
     --navy: #071526;
     --blue: #123653;
@@ -30,30 +23,75 @@
     --light: #f5f7fa;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background: var(--light);
-    color: #222;
+    color: #333;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* PAGE RADIO BUTTONS */
 .page-radio {
     display: none;
+}
+
+/* NAVBAR */
+.navbar {
+    background: var(--navy);
+    padding: 18px 0;
+}
+
+.navbar-brand {
+    color: var(--gold) !important;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu label {
+    color: white;
+    cursor: pointer;
+    padding: 10px 12px;
+    display: block;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.nav-menu label:hover {
+    color: var(--gold);
 }
 
 /* PAGE DISPLAY */
 .page {
     display: none;
-    min-height: 70vh;
+    min-height: 600px;
     animation: fadeIn .5s ease;
 }
 
 @keyframes fadeIn {
-    from {opacity: 0; transform: translateY(10px);}
-    to {opacity: 1; transform: translateY(0);}
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 #page-home:checked ~ .pages #home,
-#page-hotels:checked ~ .pages #hotels,
 #page-rooms:checked ~ .pages #rooms,
 #page-facilities:checked ~ .pages #facilities,
 #page-gallery:checked ~ .pages #gallery,
@@ -63,35 +101,49 @@ body {
     display: block;
 }
 
-/* NAVBAR */
-.navbar {
-    background: var(--navy);
-    padding: 15px 0;
+/* HERO */
+.hero {
+    min-height: 550px;
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1600&q=85')
+    center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 50px 20px;
 }
 
-.navbar-brand {
-    color: var(--gold) !important;
-    font-size: 27px;
+.hero h1 {
+    font-size: clamp(35px, 6vw, 65px);
+    color: var(--gold);
     font-weight: 700;
 }
 
-.navbar-brand span {
-    color: white;
+.hero p {
+    font-size: 18px;
+    margin: 20px 0;
 }
 
-.nav-link {
-    color: white !important;
+.btn-gold {
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    padding: 12px 28px;
+    font-weight: 600;
+    border-radius: 5px;
     cursor: pointer;
-    margin: 0 6px;
-    font-size: 14px;
 }
 
-.nav-link:hover {
-    color: var(--gold) !important;
+.btn-gold:hover {
+    background: white;
+    color: var(--navy);
 }
 
-/* COMMON */
-.section-padding {
+/* GENERAL SECTION */
+.section {
     padding: 65px 0;
 }
 
@@ -103,93 +155,16 @@ body {
 .section-title h2 {
     color: var(--navy);
     font-weight: 700;
-    font-size: 32px;
 }
 
 .section-title span {
     color: var(--gold);
 }
 
-.section-title p {
-    color: #777;
-    margin-top: 10px;
-}
-
-.gold-btn {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--navy);
-    border: none;
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.gold-btn:hover {
-    background: var(--navy);
-    color: white;
-    transform: translateY(-3px);
-}
-
-/* HERO */
-.hero {
-    min-height: 540px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    background: linear-gradient(#07152699,#07152699),
-    url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600')
-    center/cover;
-}
-
-.hero-content {
-    max-width: 800px;
-    padding: 25px;
-}
-
-.hero h1 {
-    font-size: clamp(35px,5vw,58px);
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 17px;
-    margin-bottom: 28px;
-}
-
-/* SEARCH BOX */
-.search-box {
-    background: white;
-    padding: 25px;
-    margin-top: -35px;
-    position: relative;
-    border-radius: 10px;
-    box-shadow: 0 8px 30px #00000015;
-}
-
-.search-box label {
-    font-weight: 600;
-    display: block;
-    margin-bottom: 8px;
-}
-
-.search-box input,
-.search-box select {
-    width: 100%;
-    padding: 11px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-/* CARD GRID */
+/* CARDS */
 .card-row {
     display: grid;
-    grid-template-columns: repeat(3,minmax(0,1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
 
@@ -197,13 +172,12 @@ body {
     background: white;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 20px #00000012;
+    box-shadow: 0 5px 20px rgba(0,0,0,.08);
     transition: .3s;
 }
 
 .hotel-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 25px #00000020;
 }
 
 .hotel-card img {
@@ -212,197 +186,134 @@ body {
     object-fit: cover;
 }
 
-.hotel-card-content {
+.card-content {
     padding: 22px;
 }
 
-.hotel-card h3 {
+.card-content h4 {
     color: var(--navy);
-    font-size: 20px;
-    margin-bottom: 12px;
-}
-
-.hotel-card p {
-    color: #777;
-    font-size: 14px;
-    line-height: 1.7;
-}
-
-.rating {
-    color: #e5a52e;
-    margin-bottom: 12px;
+    font-weight: 600;
 }
 
 .price {
-    color: #b18336;
-    font-size: 20px;
+    color: #b88b3b;
     font-weight: 700;
-    margin: 15px 0;
-}
-
-/* IMAGE SLIDER */
-.slider {
-    width: 100%;
-    height: 420px;
-    overflow: hidden;
-    border-radius: 12px;
-}
-
-.slider-track {
-    display: flex;
-    width: 300%;
-    height: 100%;
-    animation: slide 12s infinite;
-}
-
-.slider-track img {
-    width: 33.3333%;
-    height: 100%;
-    object-fit: cover;
-}
-
-@keyframes slide {
-    0%,28% {transform: translateX(0);}
-    33%,61% {transform: translateX(-33.3333%);}
-    66%,94% {transform: translateX(-66.6666%);}
-    100% {transform: translateX(0);}
+    font-size: 20px;
 }
 
 /* FACILITIES */
 .facility-grid {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 22px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
-.facility-card {
+.facility {
     background: white;
     text-align: center;
-    padding: 30px 15px;
+    padding: 35px 15px;
     border-radius: 10px;
-    box-shadow: 0 5px 18px #00000010;
+    box-shadow: 0 5px 20px rgba(0,0,0,.06);
     transition: .3s;
 }
 
-.facility-card:hover {
-    background: var(--navy);
-    color: white;
-    transform: translateY(-7px);
+.facility:hover {
+    transform: translateY(-6px);
 }
 
-.facility-card i {
+.facility i {
     font-size: 35px;
     color: var(--gold);
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 }
 
 /* GALLERY */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 18px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
 }
 
 .gallery-grid img {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    border-radius: 9px;
-    transition: .3s;
+    border-radius: 8px;
+    transition: .4s;
 }
 
 .gallery-grid img:hover {
-    transform: scale(1.04);
+    transform: scale(1.03);
+}
+
+/* CSS AUTOMATIC SLIDER */
+.slider {
+    overflow: hidden;
+    width: 100%;
+}
+
+.slider-track {
+    display: flex;
+    width: 300%;
+    animation: slide 15s infinite;
+}
+
+.slider-track img {
+    width: 33.3333%;
+    height: 400px;
+    object-fit: cover;
+}
+
+@keyframes slide {
+    0%, 28% { transform: translateX(0); }
+    33%, 61% { transform: translateX(-33.3333%); }
+    66%, 94% { transform: translateX(-66.6666%); }
+    100% { transform: translateX(0); }
 }
 
 /* REVIEWS */
-.review-card {
+.review {
     background: white;
-    padding: 28px;
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 5px 18px #00000012;
+    box-shadow: 0 5px 20px rgba(0,0,0,.06);
 }
 
-.review-card p {
-    color: #666;
-    font-size: 14px;
-    line-height: 1.8;
+.review i {
+    color: var(--gold);
 }
 
-.review-card h4 {
-    color: var(--navy);
-    font-size: 17px;
-    margin-top: 18px;
-}
-
-/* BOOKING */
-.booking-container {
+/* FORMS */
+.form-box {
+    background: white;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.07);
     max-width: 850px;
     margin: auto;
-    padding: 35px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 5px 25px #00000012;
 }
 
-.booking-container label {
-    font-weight: 600;
-    color: var(--navy);
-    margin-bottom: 7px;
-}
-
-.booking-container input,
-.booking-container select,
-.booking-container textarea {
-    width: 100%;
+.form-control, .form-select {
     padding: 12px;
     margin-bottom: 18px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
 }
 
-/* CONTACT */
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 22px;
-}
-
-.contact-card {
-    background: white;
-    padding: 30px 20px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 5px 18px #00000010;
-}
-
-.contact-card i {
-    font-size: 30px;
-    color: var(--gold);
-    margin-bottom: 15px;
-}
-
-.contact-card h4 {
-    color: var(--navy);
-    font-size: 18px;
-}
-
-/* NEXT AND PREVIOUS */
+/* PAGE NAVIGATION */
 .page-navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 5%;
-    background: #edf1f5;
+    padding: 25px 0;
+    border-top: 1px solid #ddd;
+    margin-top: 35px;
 }
 
 .page-navigation label {
-    cursor: pointer;
     background: var(--navy);
     color: white;
-    padding: 12px 25px;
+    padding: 10px 22px;
     border-radius: 5px;
-    transition: .3s;
+    cursor: pointer;
 }
 
 .page-navigation label:hover {
@@ -410,233 +321,103 @@ body {
     color: var(--navy);
 }
 
-.page-navigation .disabled {
-    visibility: hidden;
-}
-
-/* COMMON FOOTER */
-.hotel-footer {
-    background: linear-gradient(135deg,#071526,#102b46);
+/* FOOTER */
+.footer {
+    background: linear-gradient(120deg, #071526, #123653);
     color: white;
     padding: 60px 0 20px;
-    border-top: 4px solid var(--gold);
 }
 
-.footer-logo {
-    font-size: 30px;
-    font-weight: 700;
+.footer h4, .footer h5 {
+    color: var(--gold);
     margin-bottom: 20px;
 }
 
-.footer-logo span {
-    color: var(--gold);
-}
-
-.footer-heading {
-    color: var(--gold);
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 25px;
-}
-
-.footer-heading::after {
-    content: "";
-    display: block;
-    width: 45px;
-    height: 2px;
-    background: var(--gold);
-    margin-top: 10px;
-}
-
-.footer-description {
-    color: #c4cfda;
+.footer p, .footer a {
+    color: #d6dce4;
     font-size: 14px;
-    line-height: 1.8;
+    text-decoration: none;
+    line-height: 2;
 }
 
-.footer-links,
-.footer-contact {
+.footer a:hover {
+    color: var(--gold);
+}
+
+.footer-links {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
-.footer-links li {
-    margin-bottom: 13px;
-}
-
-.footer-links a,
-.footer-links label,
-.footer-contact a {
-    color: #c4cfda;
-    text-decoration: none;
-    cursor: pointer;
-    transition: .3s;
-}
-
-.footer-links a:hover,
-.footer-links label:hover,
-.footer-contact a:hover {
+.social-icons a {
+    display: inline-block;
+    background: rgba(255,255,255,.1);
     color: var(--gold);
-    padding-left: 5px;
-}
-
-.footer-contact li {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 18px;
-    color: #c4cfda;
-    font-size: 14px;
-}
-
-.footer-contact i {
-    color: var(--gold);
-    margin-top: 4px;
-}
-
-.social-links {
-    display: flex;
-    gap: 12px;
-    margin-top: 22px;
-}
-
-.social-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 38px;
     height: 38px;
-    background: #203d58;
-    color: var(--gold);
+    line-height: 38px;
+    text-align: center;
     border-radius: 50%;
-    transition: .3s;
-}
-
-.social-links a:hover {
-    background: var(--gold);
-    color: var(--navy);
-    transform: translateY(-5px);
-}
-
-.newsletter-form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.newsletter-form input {
-    width: 100%;
-    padding: 13px;
-    border: 1px solid #52677b;
-    background: white;
-    border-radius: 5px;
-    outline: none;
-}
-
-.newsletter-form button {
-    padding: 13px;
-    background: var(--gold);
-    color: var(--navy);
-    border: none;
-    border-radius: 5px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.newsletter-form button:hover {
-    background: white;
-}
-
-.newsletter-note {
-    color: #aebdca;
-    font-size: 12px;
-    margin-top: 12px;
-}
-
-.footer-line {
-    border-color: #52677b;
-    margin: 40px 0 22px;
+    margin-right: 7px;
 }
 
 .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.footer-bottom p,
-.bottom-links a {
-    color: #c4cfda;
+    border-top: 1px solid rgba(255,255,255,.2);
+    margin-top: 35px;
+    padding-top: 20px;
+    text-align: center;
     font-size: 13px;
 }
 
-.bottom-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.bottom-links a:hover {
-    color: var(--gold);
-}
-
 /* RESPONSIVE */
-@media(max-width:991px) {
-    .card-row {
-        grid-template-columns: repeat(2,1fr);
+@media(max-width: 991px) {
+    .navbar .container {
+        flex-direction: column;
+    }
+
+    .nav-menu {
+        justify-content: center;
+        margin-top: 12px;
     }
 
     .facility-grid {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media(max-width:767px) {
-    .hero {
-        min-height: 430px;
-    }
-
+@media(max-width: 767px) {
     .card-row,
-    .gallery-grid,
-    .contact-grid {
+    .gallery-grid {
         grid-template-columns: 1fr;
     }
 
     .facility-grid {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .slider {
-        height: 280px;
+    .hero {
+        min-height: 450px;
     }
 
-    .page-navigation {
-        padding: 20px 12px;
+    .slider-track img {
+        height: 250px;
     }
 
-    .page-navigation label {
-        padding: 10px 15px;
-        font-size: 13px;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .bottom-links {
+    .nav-menu {
         justify-content: center;
-        gap: 12px;
     }
 
-    .booking-container {
+    .nav-menu label {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .form-box {
         padding: 20px;
     }
 }
 
-@media(max-width:420px) {
+@media(max-width: 400px) {
     .facility-grid {
         grid-template-columns: 1fr;
     }
@@ -646,650 +427,390 @@ body {
 
 <body>
 
-<!-- PAGE RADIO BUTTONS -->
-<input type="radio" name="pages" id="page-home" class="page-radio" checked>
-<input type="radio" name="pages" id="page-hotels" class="page-radio">
-<input type="radio" name="pages" id="page-rooms" class="page-radio">
-<input type="radio" name="pages" id="page-facilities" class="page-radio">
-<input type="radio" name="pages" id="page-gallery" class="page-radio">
-<input type="radio" name="pages" id="page-reviews" class="page-radio">
-<input type="radio" name="pages" id="page-booking" class="page-radio">
-<input type="radio" name="pages" id="page-contact" class="page-radio">
+<!-- PAGE CONTROLS -->
+<input class="page-radio" type="radio" name="page" id="page-home" checked>
+<input class="page-radio" type="radio" name="page" id="page-rooms">
+<input class="page-radio" type="radio" name="page" id="page-facilities">
+<input class="page-radio" type="radio" name="page" id="page-gallery">
+<input class="page-radio" type="radio" name="page" id="page-reviews">
+<input class="page-radio" type="radio" name="page" id="page-booking">
+<input class="page-radio" type="radio" name="page" id="page-contact">
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark">
-<div class="container">
+<nav class="navbar">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <i class="fas fa-hotel"></i> LUXE HAVEN
+        </a>
 
-    <a class="navbar-brand" href="#home">Luxe <span>Haven</span></a>
-
-    <button class="navbar-toggler" type="button"
-    data-bs-toggle="collapse" data-bs-target="#navbarMenu"
-    aria-controls="navbarMenu" aria-expanded="false"
-    aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarMenu">
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><label class="nav-link" for="page-home">Home</label></li>
-            <li class="nav-item"><label class="nav-link" for="page-hotels">Hotels</label></li>
-            <li class="nav-item"><label class="nav-link" for="page-rooms">Rooms</label></li>
-            <li class="nav-item"><label class="nav-link" for="page-facilities">Facilities</label></li>
-            <li class="nav-item"><label class="nav-link" for="page-gallery">Gallery</label></li>
-            <li class="nav-item"><label class="nav-link" for="page-reviews">Reviews</label></li>
-            <li class="nav-item"><label class="nav-link" for="page-booking">Booking</label></li>
-            <li class="nav-item"><label class="nav-link" for="page-contact">Contact</label></li>
+        <ul class="nav-menu">
+            <li><label for="page-home">Home</label></li>
+            <li><label for="page-rooms">Rooms</label></li>
+            <li><label for="page-facilities">Facilities</label></li>
+            <li><label for="page-gallery">Gallery</label></li>
+            <li><label for="page-reviews">Reviews</label></li>
+            <li><label for="page-booking">Booking</label></li>
+            <li><label for="page-contact">Contact</label></li>
         </ul>
     </div>
-
-</div>
 </nav>
 
-<!-- ALL PAGES -->
 <div class="pages">
 
-<!-- HOME -->
+<!-- HOME PAGE -->
 <section class="page" id="home">
 
-<div class="hero">
-    <div class="hero-content">
-        <h1>Welcome to Luxe Haven Hotel</h1>
-        <p>Discover luxury, comfort and unforgettable hospitality.
-        Your perfect stay begins here.</p>
-        <label for="page-hotels" class="gold-btn">Explore Our Hotels</label>
-    </div>
-</div>
-
-<div class="container">
-    <div class="search-box">
-        <div class="row g-3 align-items-end">
-
-            <div class="col-md-3">
-                <label>Check In</label>
-                <input type="date" class="form-control">
-            </div>
-
-            <div class="col-md-3">
-                <label>Check Out</label>
-                <input type="date" class="form-control">
-            </div>
-
-            <div class="col-md-3">
-                <label>Guests</label>
-                <select class="form-select">
-                    <option>1 Guest</option>
-                    <option>2 Guests</option>
-                    <option>3 Guests</option>
-                    <option>4 Guests</option>
-                </select>
-            </div>
-
-            <div class="col-md-3">
-                <label class="d-block">&nbsp;</label>
-                <label for="page-booking" class="gold-btn w-100 text-center">
-                    Search Rooms
-                </label>
-            </div>
-
+    <div class="hero">
+        <div>
+            <h1>LUXE HAVEN</h1>
+            <h3>Luxury Stay. Timeless Memories.</h3>
+            <p>Experience the beauty and comfort of Pondicherry.</p>
+            <label for="page-rooms" class="btn-gold">Explore Rooms</label>
+            <label for="page-booking" class="btn-gold">Book Now</label>
         </div>
     </div>
-</div>
 
-<section class="section-padding">
-<div class="container">
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Welcome to <span>Luxe Haven</span></h2>
+                <p>Discover luxury, comfort and peaceful moments.</p>
+            </div>
 
-    <div class="section-title">
-        <h2>Welcome to <span>Luxe Haven</span></h2>
-        <p>Luxury hospitality for every special moment.</p>
-    </div>
-
-    <div class="row align-items-center g-4">
-
-        <div class="col-md-6">
             <div class="slider">
                 <div class="slider-track">
-                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1000" alt="Hotel">
-                    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=1000" alt="Room">
-                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1000" alt="Pool">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=85" alt="Luxury hotel pool">
+                    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1400&q=85" alt="Luxury bedroom">
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1400&q=85" alt="Luxury resort">
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="col-md-6">
-            <h2>Experience the Best Luxury Stay</h2>
-            <p class="text-muted mt-3">
-                Luxe Haven offers beautiful rooms, world-class dining,
-                premium facilities and friendly service.
-            </p>
-            <p class="text-muted">
-                Enjoy modern comfort, peaceful surroundings and memorable
-                experiences with our hospitality team.
-            </p>
-            <label for="page-hotels" class="gold-btn">Discover More</label>
+    <section class="section bg-white">
+        <div class="container text-center">
+            <h2>Enjoy Your Stay in Pondicherry</h2>
+            <p class="mt-3">Relax in elegant rooms, enjoy excellent hospitality and create unforgettable memories with us.</p>
+            <label for="page-facilities" class="btn-gold mt-3">View Facilities</label>
         </div>
+    </section>
 
+    <div class="page-navigation container">
+        <span></span>
+        <label for="page-rooms">Next Page →</label>
     </div>
-</div>
 </section>
 
-<div class="page-navigation">
-    <label class="disabled">← Previous</label>
-    <label for="page-hotels">Next Page →</label>
-</div>
-</section>
-
-<!-- HOTELS -->
-<section class="page" id="hotels">
-<div class="section-padding">
-<div class="container">
-
-    <div class="section-title">
-        <h2>Our <span>Hotels</span></h2>
-        <p>Choose your perfect destination.</p>
-    </div>
-
-    <div class="card-row">
-
-        <div class="hotel-card">
-            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800" alt="Grand Palace Hotel">
-            <div class="hotel-card-content">
-                <div class="rating">★★★★★</div>
-                <h3>Grand Palace Hotel</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Bengaluru, India</p>
-                <p>Luxury accommodation with premium service and elegant interiors.</p>
-                <div class="price">₹5,999 / Night</div>
-                <label for="page-booking" class="gold-btn">Book Now</label>
-            </div>
-        </div>
-
-        <div class="hotel-card">
-            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800" alt="Ocean View Resort">
-            <div class="hotel-card-content">
-                <div class="rating">★★★★★</div>
-                <h3>Ocean View Resort</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Goa, India</p>
-                <p>Relax near the beach with beautiful ocean views and comfort.</p>
-                <div class="price">₹7,499 / Night</div>
-                <label for="page-booking" class="gold-btn">Book Now</label>
-            </div>
-        </div>
-
-        <div class="hotel-card">
-            <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800" alt="Royal Garden Hotel">
-            <div class="hotel-card-content">
-                <div class="rating">★★★★★</div>
-                <h3>Royal Garden Hotel</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Chennai, India</p>
-                <p>Enjoy a peaceful atmosphere with modern hotel facilities.</p>
-                <div class="price">₹4,999 / Night</div>
-                <label for="page-booking" class="gold-btn">Book Now</label>
-            </div>
-        </div>
-
-    </div>
-</div>
-</div>
-
-<div class="page-navigation">
-    <label for="page-home">← Previous</label>
-    <label for="page-rooms">Next Page →</label>
-</div>
-</section>
-
-<!-- ROOMS -->
+<!-- ROOMS PAGE -->
 <section class="page" id="rooms">
-<div class="section-padding">
-<div class="container">
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Luxury <span>Rooms</span></h2>
+                <p>Choose your perfect accommodation.</p>
+            </div>
 
-    <div class="section-title">
-        <h2>Our <span>Rooms & Suites</span></h2>
-        <p>Relax in comfort with our elegant accommodation.</p>
+            <div class="card-row">
+                <div class="hotel-card">
+                    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=900&q=85" alt="Deluxe room">
+                    <div class="card-content">
+                        <h4>Deluxe Room</h4>
+                        <p>Comfortable room with modern interiors and beautiful views.</p>
+                        <div class="price">₹2,500 / Night</div>
+                        <label for="page-booking" class="btn-gold mt-3">Book Now</label>
+                    </div>
+                </div>
+
+                <div class="hotel-card">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=900&q=85" alt="Premium room">
+                    <div class="card-content">
+                        <h4>Premium Room</h4>
+                        <p>Spacious room with premium amenities and elegant design.</p>
+                        <div class="price">₹4,000 / Night</div>
+                        <label for="page-booking" class="btn-gold mt-3">Book Now</label>
+                    </div>
+                </div>
+
+                <div class="hotel-card">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=85" alt="Suite room">
+                    <div class="card-content">
+                        <h4>Luxury Suite</h4>
+                        <p>Enjoy a premium stay with luxurious comfort and style.</p>
+                        <div class="price">₹6,500 / Night</div>
+                        <label for="page-booking" class="btn-gold mt-3">Book Now</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="page-navigation container">
+        <label for="page-home">← Previous</label>
+        <label for="page-facilities">Next Page →</label>
     </div>
-
-    <div class="card-row">
-
-        <div class="hotel-card">
-            <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800" alt="Deluxe Room">
-            <div class="hotel-card-content">
-                <h3>Deluxe Room</h3>
-                <p>Comfortable room with modern interiors and city views.</p>
-                <div class="price">₹3,499 / Night</div>
-                <label for="page-booking" class="gold-btn">Reserve Room</label>
-            </div>
-        </div>
-
-        <div class="hotel-card">
-            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800" alt="Executive Suite">
-            <div class="hotel-card-content">
-                <h3>Executive Suite</h3>
-                <p>Spacious suite with premium furniture and elegant design.</p>
-                <div class="price">₹5,999 / Night</div>
-                <label for="page-booking" class="gold-btn">Reserve Room</label>
-            </div>
-        </div>
-
-        <div class="hotel-card">
-            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800" alt="Luxury Suite">
-            <div class="hotel-card-content">
-                <h3>Luxury Suite</h3>
-                <p>Enjoy an exclusive luxury experience with premium comfort.</p>
-                <div class="price">₹8,999 / Night</div>
-                <label for="page-booking" class="gold-btn">Reserve Room</label>
-            </div>
-        </div>
-
-    </div>
-</div>
-</div>
-
-<div class="page-navigation">
-    <label for="page-hotels">← Previous</label>
-    <label for="page-facilities">Next Page →</label>
-</div>
 </section>
 
-<!-- FACILITIES -->
+<!-- FACILITIES PAGE -->
 <section class="page" id="facilities">
-<div class="section-padding">
-<div class="container">
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our <span>Facilities</span></h2>
+                <p>Everything you need for a comfortable stay.</p>
+            </div>
 
-    <div class="section-title">
-        <h2>Hotel <span>Facilities</span></h2>
-        <p>Everything you need for a comfortable stay.</p>
+            <div class="facility-grid">
+                <div class="facility"><i class="fas fa-wifi"></i><h5>Free Wi-Fi</h5><p>High-speed internet.</p></div>
+                <div class="facility"><i class="fas fa-swimming-pool"></i><h5>Swimming Pool</h5><p>Relax and refresh.</p></div>
+                <div class="facility"><i class="fas fa-utensils"></i><h5>Restaurant</h5><p>Delicious dining.</p></div>
+                <div class="facility"><i class="fas fa-car"></i><h5>Parking</h5><p>Secure parking.</p></div>
+                <div class="facility"><i class="fas fa-spa"></i><h5>Spa</h5><p>Relaxing wellness.</p></div>
+                <div class="facility"><i class="fas fa-dumbbell"></i><h5>Gym</h5><p>Fitness facilities.</p></div>
+                <div class="facility"><i class="fas fa-concierge-bell"></i><h5>Room Service</h5><p>24-hour assistance.</p></div>
+                <div class="facility"><i class="fas fa-shield-alt"></i><h5>Security</h5><p>Safe accommodation.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="page-navigation container">
+        <label for="page-rooms">← Previous</label>
+        <label for="page-gallery">Next Page →</label>
     </div>
-
-    <div class="facility-grid">
-
-        <div class="facility-card">
-            <i class="fas fa-swimming-pool"></i>
-            <h4>Swimming Pool</h4>
-            <p>Relax and enjoy our beautiful pool.</p>
-        </div>
-
-        <div class="facility-card">
-            <i class="fas fa-utensils"></i>
-            <h4>Restaurant</h4>
-            <p>Enjoy delicious food and dining.</p>
-        </div>
-
-        <div class="facility-card">
-            <i class="fas fa-dumbbell"></i>
-            <h4>Fitness Center</h4>
-            <p>Stay active during your vacation.</p>
-        </div>
-
-        <div class="facility-card">
-            <i class="fas fa-wifi"></i>
-            <h4>Free Wi-Fi</h4>
-            <p>Stay connected with high-speed internet.</p>
-        </div>
-
-        <div class="facility-card">
-            <i class="fas fa-spa"></i>
-            <h4>Spa & Wellness</h4>
-            <p>Relax with our wellness services.</p>
-        </div>
-
-        <div class="facility-card">
-            <i class="fas fa-car"></i>
-            <h4>Car Parking</h4>
-            <p>Convenient and secure parking.</p>
-        </div>
-
-        <div class="facility-card">
-            <i class="fas fa-concierge-bell"></i>
-            <h4>Room Service</h4>
-            <p>Friendly 24-hour room assistance.</p>
-        </div>
-
-        <div class="facility-card">
-            <i class="fas fa-shield-alt"></i>
-            <h4>Security</h4>
-            <p>Enjoy a safe and peaceful stay.</p>
-        </div>
-
-    </div>
-</div>
-</div>
-
-<div class="page-navigation">
-    <label for="page-rooms">← Previous</label>
-    <label for="page-gallery">Next Page →</label>
-</div>
 </section>
 
-<!-- GALLERY -->
+<!-- GALLERY PAGE -->
 <section class="page" id="gallery">
-<div class="section-padding">
-<div class="container">
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our <span>Gallery</span></h2>
+                <p>Explore the beauty of Luxe Haven.</p>
+            </div>
 
-    <div class="section-title">
-        <h2>Our <span>Gallery</span></h2>
-        <p>Explore beautiful moments at Luxe Haven.</p>
+            <div class="gallery-grid">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=85" alt="Hotel swimming pool">
+                <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=900&q=85" alt="Hotel room">
+                <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=900&q=85" alt="Hotel exterior">
+                <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=900&q=85" alt="Hotel resort">
+                <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=85" alt="Luxury suite">
+                <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=900&q=85" alt="Hotel interior">
+            </div>
+        </div>
+    </section>
+
+    <div class="page-navigation container">
+        <label for="page-facilities">← Previous</label>
+        <label for="page-reviews">Next Page →</label>
     </div>
-
-    <div class="gallery-grid">
-        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800" alt="Hotel exterior">
-        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800" alt="Bedroom">
-        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800" alt="Swimming pool">
-        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800" alt="Hotel resort">
-        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800" alt="Hotel suite">
-        <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800" alt="Hotel building">
-    </div>
-
-</div>
-</div>
-
-<div class="page-navigation">
-    <label for="page-facilities">← Previous</label>
-    <label for="page-reviews">Next Page →</label>
-</div>
 </section>
 
-<!-- REVIEWS -->
+<!-- REVIEWS PAGE -->
 <section class="page" id="reviews">
-<div class="section-padding">
-<div class="container">
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Guest <span>Reviews</span></h2>
+                <p>What our guests say about us.</p>
+            </div>
 
-    <div class="section-title">
-        <h2>Guest <span>Reviews</span></h2>
-        <p>What our guests say about their experience.</p>
+            <div class="card-row">
+                <div class="review">
+                    <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="mt-3">"Excellent rooms and friendly staff. A wonderful experience."</p>
+                    <h5>Arun Kumar</h5>
+                    <small>Chennai</small>
+                </div>
+
+                <div class="review">
+                    <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="mt-3">"Beautiful atmosphere and amazing hospitality. Loved our stay."</p>
+                    <h5>Priya Sharma</h5>
+                    <small>Bangalore</small>
+                </div>
+
+                <div class="review">
+                    <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="mt-3">"Very comfortable rooms and delicious food. Highly recommended."</p>
+                    <h5>Rahul Raj</h5>
+                    <small>Coimbatore</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="page-navigation container">
+        <label for="page-gallery">← Previous</label>
+        <label for="page-booking">Next Page →</label>
     </div>
-
-    <div class="card-row">
-
-        <div class="review-card">
-            <div class="rating">★★★★★</div>
-            <p>"Amazing hotel experience! The rooms were clean, the staff were friendly and the service was excellent."</p>
-            <h4>Rahul Kumar</h4>
-            <small>Business Traveller</small>
-        </div>
-
-        <div class="review-card">
-            <div class="rating">★★★★★</div>
-            <p>"Beautiful location, delicious food and comfortable rooms. I would definitely visit again."</p>
-            <h4>Priya Sharma</h4>
-            <small>Family Guest</small>
-        </div>
-
-        <div class="review-card">
-            <div class="rating">★★★★★</div>
-            <p>"The best vacation experience. The facilities and hospitality were beyond expectations."</p>
-            <h4>Arun Raj</h4>
-            <small>Holiday Guest</small>
-        </div>
-
-    </div>
-</div>
-</div>
-
-<div class="page-navigation">
-    <label for="page-gallery">← Previous</label>
-    <label for="page-booking">Next Page →</label>
-</div>
 </section>
 
-<!-- BOOKING -->
+<!-- BOOKING PAGE -->
 <section class="page" id="booking">
-<div class="section-padding">
-<div class="container">
-
-    <div class="section-title">
-        <h2>Book Your <span>Stay</span></h2>
-        <p>Complete your booking request below.</p>
-    </div>
-
-    <div class="booking-container">
-        <form action="#" method="get">
-            <div class="row">
-
-                <div class="col-md-6">
-                    <label>Full Name</label>
-                    <input type="text" placeholder="Enter your name" required>
-                </div>
-
-                <div class="col-md-6">
-                    <label>Email Address</label>
-                    <input type="email" placeholder="Enter your email" required>
-                </div>
-
-                <div class="col-md-6">
-                    <label>Phone Number</label>
-                    <input type="tel" placeholder="Enter phone number" required>
-                </div>
-
-                <div class="col-md-6">
-                    <label>Select Hotel</label>
-                    <select required>
-                        <option value="">Choose Hotel</option>
-                        <option>Grand Palace Hotel</option>
-                        <option>Ocean View Resort</option>
-                        <option>Royal Garden Hotel</option>
-                    </select>
-                </div>
-
-                <div class="col-md-6">
-                    <label>Check In Date</label>
-                    <input type="date" required>
-                </div>
-
-                <div class="col-md-6">
-                    <label>Check Out Date</label>
-                    <input type="date" required>
-                </div>
-
-                <div class="col-md-6">
-                    <label>Number of Guests</label>
-                    <select>
-                        <option>1 Guest</option>
-                        <option>2 Guests</option>
-                        <option>3 Guests</option>
-                        <option>4 Guests</option>
-                    </select>
-                </div>
-
-                <div class="col-md-6">
-                    <label>Room Type</label>
-                    <select>
-                        <option>Deluxe Room</option>
-                        <option>Executive Suite</option>
-                        <option>Luxury Suite</option>
-                    </select>
-                </div>
-
-                <div class="col-12">
-                    <label>Special Requests</label>
-                    <textarea rows="4" placeholder="Enter your requests"></textarea>
-                </div>
-
-                <div class="col-12 text-center">
-                    <button type="submit" class="gold-btn">Submit Booking</button>
-                </div>
-
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Book Your <span>Stay</span></h2>
+                <p>Reserve your perfect room at Luxe Haven.</p>
             </div>
-        </form>
+
+            <div class="form-box">
+                <form action="#" method="get">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Full Name</label>
+                            <input type="text" class="form-control" placeholder="Enter your name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Email Address</label>
+                            <input type="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Check-in Date</label>
+                            <input type="date" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Check-out Date</label>
+                            <input type="date" class="form-control" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Room Type</label>
+                            <select class="form-select">
+                                <option>Deluxe Room</option>
+                                <option>Premium Room</option>
+                                <option>Luxury Suite</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Guests</label>
+                            <select class="form-select">
+                                <option>1 Guest</option>
+                                <option>2 Guests</option>
+                                <option>3 Guests</option>
+                                <option>4 Guests</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label>Special Requests</label>
+                            <textarea class="form-control" rows="4" placeholder="Your requests"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-gold">Submit Booking</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="page-navigation container">
+        <label for="page-reviews">← Previous</label>
+        <label for="page-contact">Next Page →</label>
     </div>
-
-</div>
-</div>
-
-<div class="page-navigation">
-    <label for="page-reviews">← Previous</label>
-    <label for="page-contact">Next Page →</label>
-</div>
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT PAGE -->
 <section class="page" id="contact">
-<div class="section-padding">
-<div class="container">
-
-    <div class="section-title">
-        <h2>Contact <span>Us</span></h2>
-        <p>We are always happy to help you.</p>
-    </div>
-
-    <div class="contact-grid">
-
-        <div class="contact-card">
-            <i class="fas fa-map-marker-alt"></i>
-            <h4>Our Address</h4>
-            <p>123 Luxury Street, Bengaluru, India</p>
-        </div>
-
-        <div class="contact-card">
-            <i class="fas fa-phone-alt"></i>
-            <h4>Phone Number</h4>
-            <p>+91 98765 43210</p>
-        </div>
-
-        <div class="contact-card">
-            <i class="fas fa-envelope"></i>
-            <h4>Email Address</h4>
-            <p>info@grandstay.com</p>
-        </div>
-
-    </div>
-
-    <div class="booking-container mt-5">
-        <h3 class="text-center mb-4">Send Us a Message</h3>
-
-        <form action="#" method="get">
-            <label>Your Name</label>
-            <input type="text" placeholder="Enter your name" required>
-
-            <label>Your Email</label>
-            <input type="email" placeholder="Enter your email" required>
-
-            <label>Subject</label>
-            <input type="text" placeholder="Enter subject">
-
-            <label>Your Message</label>
-            <textarea rows="4" placeholder="Write your message" required></textarea>
-
-            <div class="text-center">
-                <button type="submit" class="gold-btn">Send Message</button>
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact <span>Us</span></h2>
+                <p>We are happy to assist you.</p>
             </div>
-        </form>
+
+            <div class="card-row mb-5">
+                <div class="facility">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h5>Address</h5>
+                    <p>Pondicherry, India</p>
+                </div>
+                <div class="facility">
+                    <i class="fas fa-phone"></i>
+                    <h5>Phone</h5>
+                    <p>+91 98765 43210</p>
+                </div>
+                <div class="facility">
+                    <i class="fas fa-envelope"></i>
+                    <h5>Email</h5>
+                    <p>info@luxehaven.com</p>
+                </div>
+            </div>
+
+            <div class="form-box">
+                <h4 class="mb-4">Send Us a Message</h4>
+                <form action="#" method="get">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                    <input type="email" class="form-control" placeholder="Your Email" required>
+                    <input type="text" class="form-control" placeholder="Subject">
+                    <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn-gold">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="page-navigation container">
+        <label for="page-booking">← Previous</label>
+        <label for="page-home">Back to Home</label>
     </div>
-
-</div>
-</div>
-
-<div class="page-navigation">
-    <label for="page-booking">← Previous</label>
-    <label class="disabled">Next →</label>
-</div>
 </section>
 
 </div>
-<!-- END ALL PAGES -->
 
-<!-- COMMON FOOTER: VISIBLE ON EVERY PAGE -->
-<footer class="hotel-footer">
-<div class="container">
+<!-- COMMON FOOTER: SHOWN AFTER EVERY SELECTED PAGE -->
+<footer class="footer">
+    <div class="container">
+        <div class="row g-4">
 
-    <div class="row g-4">
-
-        <!-- ABOUT -->
-        <div class="col-lg-3 col-md-6">
-            <h3 class="footer-logo">Grand <span>Stay</span></h3>
-
-            <p class="footer-description">
-                Experience luxury, comfort and unforgettable hospitality.
-                Enjoy your perfect stay with us and create wonderful memories.
-            </p>
-
-            <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <div class="col-lg-3 col-md-6">
+                <h4><i class="fas fa-hotel"></i> LUXE HAVEN</h4>
+                <p>Experience luxury, comfort and unforgettable hospitality in beautiful Pondicherry.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com/" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h5>Quick Links</h5>
+                <ul class="footer-links">
+                    <li><label for="page-home">Home</label></li>
+                    <li><label for="page-rooms">Rooms</label></li>
+                    <li><label for="page-facilities">Facilities</label></li>
+                    <li><label for="page-gallery">Gallery</label></li>
+                    <li><label for="page-reviews">Reviews</label></li>
+                    <li><label for="page-booking">Booking</label></li>
+                    <li><label for="page-contact">Contact</label></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h5>Contact Details</h5>
+                <p><i class="fas fa-map-marker-alt"></i> Pondicherry, India</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                <p><i class="fas fa-envelope"></i> info@luxehaven.com</p>
+                <p><i class="fas fa-clock"></i> 24/7 Guest Support</p>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <h5>Newsletter</h5>
+                <p>Subscribe to receive our latest offers and updates.</p>
+                <form action="#" method="get">
+                    <input type="email" class="form-control" placeholder="Enter Email" required>
+                    <button class="btn-gold w-100" type="submit">Subscribe</button>
+                </form>
+            </div>
+
         </div>
 
-        <!-- QUICK LINKS -->
-        <div class="col-lg-3 col-md-6">
-            <h4 class="footer-heading">Quick Links</h4>
-
-            <ul class="footer-links">
-                <li><label for="page-home">Home</label></li>
-                <li><label for="page-hotels">Our Hotels</label></li>
-                <li><label for="page-rooms">Rooms & Suites</label></li>
-                <li><label for="page-facilities">Facilities</label></li>
-                <li><label for="page-gallery">Gallery</label></li>
-                <li><label for="page-booking">Book Now</label></li>
-            </ul>
-        </div>
-
-        <!-- CONTACT -->
-        <div class="col-lg-3 col-md-6">
-            <h4 class="footer-heading">Contact Us</h4>
-
-            <ul class="footer-contact">
-                <li>
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>123 Luxury Street, Bengaluru, India</span>
-                </li>
-
-                <li>
-                    <i class="fas fa-phone-alt"></i>
-                    <a href="tel:+919876543210">+91 98765 43210</a>
-                </li>
-
-                <li>
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:info@grandstay.com">info@grandstay.com</a>
-                </li>
-
-                <li>
-                    <i class="fas fa-clock"></i>
-                    <span>24/7 Customer Support</span>
-                </li>
-            </ul>
-        </div>
-
-        <!-- NEWSLETTER -->
-        <div class="col-lg-3 col-md-6">
-            <h4 class="footer-heading">Newsletter</h4>
-
-            <p class="footer-description">
-                Subscribe to receive special offers and hotel updates.
-            </p>
-
-            <form class="newsletter-form" action="#" method="get">
-                <input type="email" placeholder="Enter your email" required>
-
-                <button type="submit">
-                    Subscribe <i class="fas fa-paper-plane"></i>
-                </button>
-            </form>
-
-            <p class="newsletter-note">
-                Get exclusive deals directly in your inbox!
+        <div class="footer-bottom">
+            <p>© 2026 Luxe Haven. All Rights Reserved.</p>
+            <p>
+                <a href="#privacy">Privacy Policy</a> |
+                <a href="#terms">Terms & Conditions</a>
             </p>
         </div>
-
     </div>
-
-    <hr class="footer-line">
-
-    <!-- COPYRIGHT -->
-    <div class="footer-bottom">
-        <p>© 2026 Luxe Haven Hotel. All Rights Reserved.</p>
-
-        <div class="bottom-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-            <a href="#">Support</a>
-        </div>
-    </div>
-
-</div>
 </footer>
-
-<!-- Bootstrap bundle: required for responsive navbar -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
